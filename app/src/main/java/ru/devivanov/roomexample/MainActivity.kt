@@ -27,6 +27,8 @@ class MainActivity : AppCompatActivity() {
             Cat(5, "Whiskers", 2),
             Cat(6, "Barton", 1),
         )
+
+        val cat = Cat(catName = "Масик", catAge = 1)
         Executors.newSingleThreadExecutor().execute {
             catDao.insertAll(cats)
             println(catDao.getAll())
