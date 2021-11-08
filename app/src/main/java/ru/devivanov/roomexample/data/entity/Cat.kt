@@ -7,5 +7,6 @@ data class Cat(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     @ColumnInfo(name = "cat_name") val catName: String,
     @ColumnInfo(name = "cat_age") val catAge: Int,
-    @ColumnInfo(name = "favorite_food") val favoriteFood: String = ""
+    @ColumnInfo(name = "favorite_food") val favoriteFood: String = "",
+    @ColumnInfo(name = "favorite_toy") val favoriteToy: String = ""
 )

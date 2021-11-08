@@ -14,14 +14,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-//        val MIGRATION_1_2 = object : Migration(1, 2) {
-//            override fun migrate(database: SupportSQLiteDatabase) {
-//                database.execSQL("ALTER TABLE cat_table ADD COLUMN favorite_food text NOT NULL DEFAULT ''")
-//            }
-//        }
+        val MIGRATION_1_2 = object : Migration(1, 2) {
+            override fun migrate(database: SupportSQLiteDatabase) {
+                database.execSQL("ALTER TABLE cat_table ADD COLUMN favorite_toy text NOT NULL DEFAULT ''")
+            }
+        }
 
         val db = Room.databaseBuilder(applicationContext, AppDatabase::class.java, "cat_database")
-//            .addMigrations(MIGRATION_1_2)
+            .addMigrations(MIGRATION_1_2)
             .build()
 
         val catDao = db.catDao()
